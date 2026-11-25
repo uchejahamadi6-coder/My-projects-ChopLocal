@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f4ec">
+  <title>Order operations demo — ChopLocal</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="portal.js" defer></script>
+</head>
+<body>
+  <div class="portal-wrap">
+    <header class="portal-header">
+      <a class="brand" href="index.html">✳ chop<span>local</span></a>
+      <nav class="portal-nav"><a href="index.html">Customer menu</a><a href="checkout.html">Checkout demo</a></nav>
+    </header>
+    <div class="demo-banner"><strong>Admin interface prototype—not secure or connected to a server.</strong> The role switch below only demonstrates what each role would see. It is not authentication or a real permission boundary. Do not enter real customer information.</div>
+    <section class="page-heading">
+      <div class="eyebrow">Festac pilot · operations</div>
+      <h1>Order desk</h1>
+      <p>One customer basket can become several restaurant sub-orders. Staff see the orders needed for their role; ChopLocal operations coordinates the whole delivery.</p>
+    </section>
+    <main>
+      <section class="panel">
+        <div class="toolbar">
+          <label for="adminRole">Demo view
+            <select id="adminRole">
+              <option value="restaurant">Restaurant staff</option>
+              <option value="operations">ChopLocal operations</option>
+            </select>
+          </label>
+          <label for="restaurantFilter">Restaurant
+            <select id="restaurantFilter"></select>
+          </label>
+        </div>
+        <p class="role-summary" id="roleSummary"></p>
+      </section>
+      <section class="order-list" id="orderList" aria-live="polite"></section>
+      <p class="notice" id="adminNotice" role="status"></p>
+      <section class="panel">
+        <h2>Why multiple admins are manageable</h2>
+        <p class="role-summary">Each real staff member should use an individual account. The backend checks their role and restaurant assignment on every request: restaurant staff can only read or update their restaurant’s sub-orders; ChopLocal operations can view all sub-orders and assign riders. Access should be logged, and shared admin passwords should be avoided.</p>
+        <p class="fine-print">A dropdown in this demo only simulates the screens. Production access control must live in the Node.js API and database rules, never just in the browser UI.</p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

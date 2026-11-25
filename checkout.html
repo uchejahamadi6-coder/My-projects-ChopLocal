@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f4ec">
+  <title>Checkout preview — ChopLocal</title>
+  <link rel="stylesheet" href="app.css">
+  <script src="portal.js" defer></script>
+</head>
+<body>
+  <div class="portal-wrap">
+    <header class="portal-header">
+      <a class="brand" href="index.html">✳ chop<span>local</span></a>
+      <nav class="portal-nav"><a href="index.html">Back to menu</a><a href="admin.html">Admin demo</a></nav>
+    </header>
+    <div class="demo-banner"><strong>Prototype checkout only.</strong> This page does not take payment or send a real order. Don’t enter personal or payment details.</div>
+    <section class="page-heading">
+      <div class="eyebrow">Festac pilot · step 2</div>
+      <h1>Review your food plan</h1>
+      <p>Items from different restaurants stay grouped so each kitchen receives only its own sub-order.</p>
+    </section>
+    <main class="checkout-layout">
+      <section class="panel">
+        <h2>Your items</h2>
+        <div class="checkout-lines" id="checkoutLines"></div>
+      </section>
+      <section class="panel">
+        <h2>Delivery preview</h2>
+        <div class="summary-row"><span>Food subtotal</span><strong id="foodSubtotal">₦0</strong></div>
+        <div class="summary-row"><span>Restaurant pickups</span><strong id="restaurantCount">0</strong></div>
+        <p class="fine-print">In the real service, delivery will be estimated from the route distance and number of restaurant pickups, and shown before payment. No delivery estimate or payment is connected in this demo.</p>
+        <form class="form-stack" id="checkoutForm">
+          <label for="deliveryArea">Delivery area for this demo</label>
+          <input id="deliveryArea" name="deliveryArea" value="Festac Town" autocomplete="off" required>
+          <p class="fine-print">Use an example area only; this preview doesn’t need your home address.</p>
+          <button class="primary-btn" id="placeDemoOrder" type="submit">Create demo order</button>
+        </form>
+        <p class="notice" id="checkoutNotice" role="status"></p>
+      </section>
+    </main>
+    <p class="fine-print">Order flow: one customer checkout → separate restaurant sub-orders → ChopLocal operations can coordinate rider assignment. This page is a local design prototype, not a live ordering service.</p>
+  </div>
+</body>
+</html>
